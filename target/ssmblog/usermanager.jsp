@@ -47,11 +47,12 @@
     <div class="col-xs-2  nav" style="background-color:inherit;border-right-style: solid;margin: 5px 0 5px 0" id="left-menu" >
         <ul class="nav nav-pills nav-stacked">
             <li role="presentation"><a href="#blogtable" class="btn btn-primary">查询帖子</a></li>
-            <li role="presentation"><a href="#addblog">发布公告</a></li>
+            <li role="presentation"><a href="#commenttable" class="btn btn-primary">查询评论</a></li>
+            <li role="presentation"><a href="#addblog" class="btn btn-primary">发布公告</a></li>
         </ul>
     </div>
         <%--右边--%>
-    <div class="col-xs-10 " style="margin: 5px 0 5px 0; overflow-y:auto; height:550px;" id="right-menu">
+    <div class="col-xs-10 " style="margin: 5px 0 5px 0; overflow-y:auto; height:650px;" id="right-menu">
         <%--查询帖子--%>
         <h3 class="text-center">查询您的贴子</h3>
         <table class="table table-bordered table-condensed" id="blogtable">
