@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ved.ssmblog.dao.CommentDao">
+    <insert id="addComment" parameterType="comment">
+        INSERT INTO j_comment (uid,uname,ctext,bgid,cdate) values (#{uid},#{uname},#{ctext},#{bgid},#{cdate})
+    </insert>
+    <select id="findCommBybgid" parameterType="int" resultType="comment">
+        select * from j_comment where bgid=#{bgid} order by id desc
+    </select>
+    <select id="findCommByuid" parameterType="int" resultType="comment">
+        select * from j_comment where uid=#{uid} order by id desc
+    </select>
+    <select id="findCommByuname" parameterType="String" resultType="comment">
+        select * from j_comment where uname=#{uname} order by id desc
+    </select>
+</mapper>

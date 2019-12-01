@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ved.ssmblog.dao.BlogDao">
+    <insert id="addBlog" parameterType="blog">
+       INSERT INTO jblog (uid,jdate,bid,profile,imageurl,blogtitle) VALUES (#{uid},#{jdate},#{bid},#{profile},#{imageurl},#{blogtitle})
+    </insert>
+    <select id="findAllBlogsBybid" parameterType="int" resultType="blog">
+        select * from jblog where bid = #{bid} order BY id desc
+    </select>
+    <select id="findBlogsByuid" parameterType="int" resultType="blog">
+        select * from jblog where uid=#{uid} order by id desc
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ved.ssmblog.dao.UserDao">
+    <select id="findById" resultType="user" parameterType="int">
+        select * from juser where id = #{id}
+    </select>
+    <insert id="addtUser" parameterType="user">
+        INSERT INTO juser (username,PASSWORD,email,nickname,isAdmin) VALUES (#{username},#{password},#{email},#{nickname},#{isAdmin})
+    </insert>
+    <select id="findByemail" parameterType="String" resultType="user">
+        select * from juser where email=#{email}
+    </select>
+    <select id="findByName" parameterType="String" resultType="user">
+        select * from juser where username=#{username}
+    </select>
+</mapper>
